@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droomreis - Page d'accueil</title>
+
+  <!--Liaison avec les autres pages*/-->
+  <link rel="stylesheet" href="Style_accueil.css">
+  <script src="script_accueil.js"></script>
+  
+</head>
+<body>
+  <!-- En-tête avec navigation et sélection de langue -->
+  <header class="header">
+    <div class="logo">
+      <img src="Logo.png" alt="Logo Droomreis" class="logo-image">
+    </div>
+    <nav class="nav">
+        <a href="#">Accueil</a>
+        <a href="#">Destinations</a>
+        <a href="#">Messagerie</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <button >S'inscrire</button>
+      <button >Se connecter</button>
+    </div>
+  </header>
+
+  <!-- Section de recherche -->
+  <section class="search-section">
+    <form class="search-form">
+      <input type="text" placeholder="Destination" data-placeholder="destination">
+      <input type="date">
+      <select>
+        <option value="1">Paris</option>
+        <option value="2">Milan</option>
+        <option value="3">Etretat</option>
+        <option value="4">Lyon</option>
+        <option value="5">5+</option>
+      </select>
+      <button>Rechercher</button>
+    </form>
+  </section>
+
+  <!-- Section avec images de destinations -->
+  <section class="destinations-section">
+    <button class="scroll-button left">&lt;</button>
+    <div class="image-gallery">
+      <img src="Destination_Maldives.jpg" alt="Destination Maldives">
+      <div class="hover-text">Madrid</div>
+
+      <img src="Destination_Niagara.jpg" alt="Chute du Niagara">
+      <img src="Destination_Milan.png" alt="Milan">
+      <img src="Destination-_Madrid.jpg" alt="Madrid">
+      <img src="Destination_Amazonie.jpg" alt="Amazonie">
+    </div>
+    <button class="scroll-button right">&gt;</button>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="footer">
+    <a href="#">Mentions légales</a>
+    <a href="#">Twitter</a>
+    <a href="#">TikTok</a>
+    <a href="#">Instagram</a>
+  </footer>
+
+  
+</body>
+</html>
