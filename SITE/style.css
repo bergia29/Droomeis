@@ -1,0 +1,196 @@
+/* Style général */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* En-tête */
+.header {
+  display: flex;
+  align-items: center; /* Centre verticalement tous les enfants */
+  justify-content: space-between; /* Espace entre logo, navigation, et boutons */
+  background-color: #88c3f8;
+  width: 80%;
+  height: 80px; /* Augmente légèrement la hauteur pour équilibrer */
+  margin: 10px auto;
+  padding: 0 20px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center; /* Centre le logo verticalement */
+}
+
+.logo-image {
+  height: 250px; /* Ajuste pour correspondre à la hauteur de l'en-tête */
+  margin-right: 180px;
+  margin-top: 20px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center; /* Centre verticalement les liens */
+  gap: 30px; /* Espacement horizontal entre les liens */
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Boutons d'authentification */
+.auth-buttons {
+  margin-left: auto; /* Pousse les boutons vers la droite */
+  display: flex;
+  gap: 10px; /* Espace entre les boutons */
+}
+
+.auth-buttons button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-buttons button:hover {
+  background-color: #003d82; /* Couleur au survol */
+}
+
+/* Grille d'images ou d'éléments */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  grid-template-rows: repeat(3, 1fr); /* 3 lignes égales */
+  gap: 10px; /* Espacement entre les éléments */
+  width: 80%; /* Largeur totale de la grille */
+  margin:-120px auto; /* Centrer la grille */
+}
+
+.grid-item {
+  border: 1px solid #000; /* Bordure pour les cases */
+  background-color: #e8f0f7; /* Couleur de fond des cases */
+  height: 200px; /* Hauteur fixe pour chaque case */
+  border-radius: 20px;
+  width: 500px;
+}
+
+.grid-item-image {
+  width: 100%;  /* Remplir la largeur de la cellule */
+  height: 75%; /* Remplir la hauteur de la cellule */
+  object-fit: contain; /* Assurez-vous que l'image est entièrement visible sans être coupée */
+  transform: scale(1); /* Réduit la taille de l'image à 80% de sa taille d'origine */
+}
+
+/* Conteneur de la barre d'onglets */
+.tab-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Style des onglets */
+* {
+  box-sizing: border-box; /* Les bordures et paddings sont inclus dans la taille totale */
+  margin: 0;
+  padding: 0;
+}
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid black
+  
+}
+
+/* Section des filtres */
+.filter-bubbles {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: -240px;
+  padding: 10px;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 60vh; /* Hauteur ajustée pour éviter trop d'espace vertical */
+  gap: 10px; /* Espacement horizontal entre les bulles Budget Faible et Budget Premium */
+  flex-direction: row; /* Organise les bulles côte à côte (horizontalement) */
+}
+
+.bubble {
+  padding: 10px 20px; /* Réduit l'espace à l'intérieur des bulles */
+  margin: 5px; /* Espacement réduit autour des bulles */
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: ##e8f0f7; /* Exemple de couleur */
+  color: black;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.bubble:hover {
+  background-color: #003d82; /* Changer la couleur de fond au survol */
+  color: white; /* Changer la couleur du texte au survol */
+}
+
+/* Style spécifique pour les bulles de budget */
+.bubble[data-filter="budget-faible"] {
+  background-color: #90EE90; /* Couleur de fond pour budget faible */
+  color: white;
+}
+
+.bubble[data-filter="budget-premium"] {
+  background-color: #FFD700; /* Couleur de fond pour budget premium */
+  color: white;
+}
+
+/* Bulle active (lorsque l'utilisateur a sélectionné cette option) */
+.bubble.active {
+  transform: scale(1.1); /* Agrandir la bulle lorsqu'elle est active */
+  background-color: #0056b3; /* Couleur de fond pour la bulle active */
+}
+
+}
+
+/* Cacher les éléments non correspondants (utilisé via JavaScript) */
+.grid-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.grid-item.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+.view-all-container {
+  position: absolute;
+  margin-bottom: -100px; /* Place le bouton à 20px du bas de la page */
+  left: 50%; /* Place le bouton au centre horizontalement */
+  transform: translateX(-50%); /* Centre précisément le bouton */
+  text-align: center; /* Centre le texte du bouton */
+  width: auto; /* S'assure que le bouton est centré sur toute la largeur */
+}
+
+.view-all-container .bubble {
+  background-color: #17a2b8; /* Couleur pour Voir Tout */
+}

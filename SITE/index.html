@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droomreis - Page d'accueil</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="java.js" defer></script>
+</head>
+<body>
+  <!-- En-tête avec navigation et sélection de langue -->
+  <header class="header">
+    <div class="logo">
+      <img src="Logo.png" alt="Logo Droomreis" class="logo-image">
+    </div>
+    <nav class="nav">
+      <a href="#">Accueil</a>
+      <a href="#">Destinations</a>
+      <a href="#">Messagerie</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <button>S'inscrire</button>
+      <button>Se connecter</button>
+    </div>
+  </header>
+
+  <div class="filter-bubbles">
+  <button class="bubble" data-filter="foret">Forêt</button>
+  <button class="bubble" data-filter="plage">Plage</button>
+  <button class="bubble" data-filter="desert">Désert</button>
+  <button class="bubble" data-filter="foret">Montagne</button>
+  <button class="bubble" data-filter="plage">Ville</button>
+  <button class="bubble" data-filter="desert">Campagne</button>
+  </div>
+
+<div class="filter-container">
+  <!-- Bulle Budget Faible -->
+  <div class="bubble" data-filter="budget-faible">Budget Faible</div>
+
+  <!-- Bulle Budget Premium -->
+  <div class="bubble" data-filter="budget-premium">Budget Premium</div>
+
+  <!-- Bulle pour voir toutes les options -->
+  <div class="view-all-container">
+    <div class="bubble" data-filter="tout">Voir Tout</div>
+  </div>
+</div>
+
+  <!-- Grille d'images ou d'éléments placée en bas -->
+  <div class="grid-container">
+    <div class="grid-item">
+    <img src="maldives.webp" alt="Description de l'image" class="grid-item-image">
+    <p class="grid-item-description">Voici une description pour l'image.</p>
+  </div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+  </div>  
+</body>
+</html>
