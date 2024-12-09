@@ -31,6 +31,7 @@ body {
   height: 250px; /* Ajuste pour correspondre à la hauteur de l'en-tête */
   margin-right: 180px;
   margin-top: 20px;
+  display: flex;
 }
 
 /* Navigation */
@@ -45,6 +46,7 @@ body {
   color: #000;
   font-size: 16px;
   font-weight: bold;
+  display: flex;
 }
 
 /* Boutons d'authentification */
@@ -61,10 +63,12 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
 }
 
 .auth-buttons button:hover {
   background-color: #003d82; /* Couleur au survol */
+  display: flex;
 }
 
 /* Grille d'images ou d'éléments */
@@ -73,23 +77,27 @@ body {
   grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
   grid-template-rows: repeat(3, 1fr); /* 3 lignes égales */
   gap: 10px; /* Espacement entre les éléments */
-  width: 80%; /* Largeur totale de la grille */
-  margin:-120px auto; /* Centrer la grille */
-}
+  width: 70%; /* Largeur totale de la grille */
+  margin-left: 35px;
+  margin-top: -100px;
+  }
 
 .grid-item {
   border: 1px solid #000; /* Bordure pour les cases */
   background-color: #e8f0f7; /* Couleur de fond des cases */
-  height: 200px; /* Hauteur fixe pour chaque case */
+  height: 280px; /* Hauteur fixe pour chaque case */
   border-radius: 20px;
-  width: 500px;
+  width: 480px;
+  display: flex;
+  align-items: center;
 }
 
 .grid-item-image {
   width: 100%;  /* Remplir la largeur de la cellule */
-  height: 75%; /* Remplir la hauteur de la cellule */
-  object-fit: contain; /* Assurez-vous que l'image est entièrement visible sans être coupée */
-  transform: scale(1); /* Réduit la taille de l'image à 80% de sa taille d'origine */
+  height: 100%; /* Remplir la hauteur de la cellule */
+  border-radius: 20px;
+  object-fit: cover; /* Assurez-vous que l'image est entièrement visible sans être coupée */
+  display: flex;
 }
 
 /* Conteneur de la barre d'onglets */
@@ -99,6 +107,7 @@ body {
   align-items: center;
   padding: 10px;
   border-radius: 10px;
+
 }
 
 /* Style des onglets */
@@ -122,7 +131,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: -240px;
+  margin-bottom: -220px;
   padding: 10px;
 }
 
@@ -141,21 +150,24 @@ body {
   border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
-  background-color: ##e8f0f7; /* Exemple de couleur */
+  background-color: #E6EFE8; /* Exemple de couleur */
   color: black;
   text-align: center;
   transition: background-color 0.3s ease;
+  display: flex;
 }
 
 .bubble:hover {
   background-color: #003d82; /* Changer la couleur de fond au survol */
   color: white; /* Changer la couleur du texte au survol */
+  display: flex;
 }
 
 /* Style spécifique pour les bulles de budget */
 .bubble[data-filter="budget-faible"] {
-  background-color: #90EE90; /* Couleur de fond pour budget faible */
+  background-color: #B5D053; /* Couleur de fond pour budget faible */
   color: white;
+  display: flex;
 }
 
 .bubble[data-filter="budget-premium"] {
@@ -193,4 +205,20 @@ body {
 
 .view-all-container .bubble {
   background-color: #17a2b8; /* Couleur pour Voir Tout */
+}
+
+.grid-item-description {
+  position: absolute;
+  bottom: 20px;  /* Place la bulle un peu plus bas sur l'image */
+  left: 35px;    /* Place la bulle un peu à gauche */
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  color: white; /* Texte en blanc */
+  padding: 10px 5px;
+  border-radius: 25px; /* Arrondi des coins */
+  cursor: pointer;
+  text-decoration: none; /* Retirer le soulignement du lien */
+  font-size: 14px;
+  transition: background-color 0.3s ease; 
+  margin-bottom: 200px;
+
 }
