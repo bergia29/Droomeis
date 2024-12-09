@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droomreis</title>
+  
+  <link rel="stylesheet" href="General.css">
+  <!--Mettre votre fichier css sans le menu et pied de page car il sont dans le fichier General.css-->
+
+  <script src="script_accueil.js" defer></script>
+</head>
+
+<body>
+  <!-- En-tête avec navigation -->
+  <header class="header">
+    <div class="logo">
+      <a href="accueil.html"><img src="Logo.png" alt="Logo Droomreis" class="logo-image"></a>
+    </div>
+    <nav class="nav">
+      <a href="accueil.html" >Accueil</a>
+      <a href="destination.html"class="active">Destinations</a>
+      <a href="messagerie.html">Messagerie</a>
+      <a href="contact.html">Contact</a>
+      <a href="propos.html">A propos de nous</a>
+
+    </nav>
+    <div class="auth-buttons">
+      <a href="Formulaire_inscription.html" class="auth-button">S'inscrire</a>
+      <a href="Formulaire_connexion.html" class="auth-button">Se connecter</a>
+    </div>
+  </header>
+
+  <!-- Section de recherche -->
+  <section class="search-section">
+    <form class="search-form">
+        <label for="destination-search">Destination :</label>
+        <input 
+            type="text" 
+            id="destination-search" 
+            name="destination" 
+            list="destination-options" 
+            placeholder="Choisissez ou tapez une destination" 
+            aria-label="Recherche de destination">
+        
+        <datalist id="destination-options">
+            <option value="Paris">
+            <option value="Milan">
+            <option value="Etretat">
+            <option value="Lyon">
+            <option value="Tokyo">
+        </datalist>
+        
+        <input type="date" aria-label="Choisir une date">
+        <button type="submit">Rechercher</button>
+    </form>
+</section>
+
+<!-- Pied de page -->
+<footer class="footer">
+    <a href="#">Mentions légales</a>
+    <a href="#">Twitter</a>
+    <a href="#">TikTok</a>
+    <a href="#">Instagram</a>
+  </footer>
+
+
+</html>
