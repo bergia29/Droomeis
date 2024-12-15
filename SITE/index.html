@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droomreis - Page d'accueil</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="java.js" defer></script>
+  <style >
+.grid-item {
+display: flex;
+}
+</style>
+</head>
+<body>
+  <!-- En-tête avec navigation et sélection de langue -->
+
+  <header class="header">
+    <div class="logo">
+      <img src="Logo.png" alt="Logo Droomreis" class="logo-image">
+    </div>
+    <nav class="nav">
+      <a href="#">Accueil</a>
+      <a href="#">Destinations</a>
+      <a href="#">Messagerie</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <button>S'inscrire</button>
+      <button>Se connecter</button>
+    </div>
+  </header>
+
+  <div class="filter-bubbles">
+  <button class="bubble" data-filter="mer"><img src="c.png" alt="mer" class="logo-filtres">Mer</button>
+  <button class="bubble" data-filter="desert"><img src="desert.png" alt="desert" class="logo-filtres">Désert</button>
+  <button class="bubble" data-filter="randonnée"><img src="montagne.png" alt="randonnée" class="logo-filtres">Randonnée</button>
+  <button class="bubble" data-filter="ville"><img src="ville.png" alt="ville" class="logo-filtres">Ville</button>
+  <button class="bubble" data-filter="safari"><img src="safari.png" alt="safari" class="logo-filtres">Safari</button>
+  <button class="bubble" data-filter="musée"><img src="musée.jpg" alt="musée" class="logo-filtres">Musée</button>
+  <button class="bubble" data-filter="escalade"><img src="escalade.png" alt="escalade" class="logo-filtres">Escalade</button>
+  <button class="bubble" data-filter="artisanat"><img src="artisanat.png" alt="artisanat" class="logo-filtres">Artisanat</button>
+  <button class="bubble" data-filter="plongée"><img src="plongée.png" alt="plongée" class="logo-filtres">Plongée</button>
+  <button class="bubble" data-filter="circuit-détente"><img src="circuit-détente.png" alt="circuit-détente" class="logo-filtres">Ciruit-détente</button>
+
+  </div>
+
+  <!-- Grille d'images ou d'éléments placée en bas -->
+ <div class="grid-container">
+    <div class="grid-item" data-category="mer circuit-détente plongée">
+      <img src="maldives.webp" alt="Maldives" class="grid-item-image">
+      <div class="image-caption">
+        <p><strong>Sun Siyam Iru Veli, Maldives</strong></p>
+        <p class="caption">un havre de paix avec des villas sur pilotis, des eaux cristallines et des plages paradisiaques</p>
+      </div>
+      <button class="price-bubble">À partir de 899€ TTC*</button>
+    </div>
+    <div class="grid-item"data-category="mer artisanat circuit-détente plongée randonnée">
+      <img src="bali.jpg" alt="Bali" class="grid-item-image">
+      <div class="image-caption">
+        <p><strong>Bali, Indonésie</strong></p>
+        <p class="caption">embarquez pour une aventure unique entre volcans fascinants, forêts luxuriantes et temples sacrés</p>
+      </div>
+      <button class="price-bubble">À partir de 999€ TTC*</button>
+    </div>
+    <div class="grid-item"data-category="musée randonnée ville">
+      <img src="NYC.jpg" alt="New York City" class="grid-item-image">
+      <div class="image-caption">
+        <p><strong>New York City, États-Unis</strong></p>
+        <p class="caption">une ville où les gratte-ciels imposants, les rues animées et les monuments emblématiques vous attendent</p>
+      </div>
+      <button class="price-bubble">À partir de 1299€ TTC*</button>
+    </div>
+    <div class="grid-item"data-category="randonnée désert artisanat desert">
+      <img src="turquie.jpg" alt="Turquie" class="grid-item-image">
+      <div class="image-caption">
+        <p><strong>Cappadoce, Turquie</strong></p>
+        <p class="caption">un lieu où les cheminées de fées, les paysages féériques et les montgolfières offrent un spectacle fascinant</p>
+      </div>
+      <button class="price-bubble">À partir de 799€ TTC*</button>
+    </div>
+    <div class="grid-item"data-category="ville musée randonnée">
+      <img src="chine.jpg" alt="Chine" class="grid-item-image">
+      <div class="image-caption">
+        <p><strong>Pékin, Chine</strong></p>
+        <p class="caption">une ville où les trésors historiques, les temples majestueux et l'effervescence urbaine s'entrelacent</p>
+      </div>
+      <button class="price-bubble">À partir de 1199€ TTC*</button>
+    </div>
+    <div class="grid-item"data-category="ville mer circuit-détente">
+      <img src="grece.webp" alt="Grèce" class="grid-item-image">
+      <div class="image-caption">
+        <p><strong>Santorin, Grèce</strong></p>
+        <p class="caption"> une île où paysages volcaniques, villages pittoresques et mer turquoise forment un décor inoubliable</p>
+      </div>
+      <button class="price-bubble">À partir de 899€ TTC*</button>
+    </div>
+
+
+<div class="grid-item hidden" data-category="ville musée randonnée"> 
+    <img src="rome.jpg" alt="rome" class="grid-item-image">
+    <div class="image-caption">
+        <p><strong>Rome, Italie</strong></p>
+        <p class="caption">une ville où les vestiges impériaux, les fontaines emblématiques et l'âme éternelle de la capitale vous accueillent</p>
+    </div>
+    <button class="price-bubble">À partir de X€ TTC*</button>
+</div> <!-- Fermeture de la div de Rome -->
+
+<div class="grid-item hidden" data-category="ville musée randonnée desert">
+    <img src="egypte.webp" alt="egypte" class="grid-item-image">
+    <div class="image-caption">
+        <p><strong>Le Caire, Égypte</strong></p>
+        <p class="caption">une ville où les pyramides majestueuses, les trésors antiques et l’effervescence des souks créent une expérience unique</p>
+    </div>
+    <button class="price-bubble">À partir de X€ TTC*</button>
+</div> <!-- Fermeture de la div du Caire -->
+
+<div class="grid-item hidden" data-category="escalade randonnée circuit-détente"> 
+    <img src="chamomix.jpg" alt="chamomix" class="grid-item-image">
+    <div class="image-caption">
+        <p><strong>Chamomix, France</strong></p>
+        <p class="caption">un mélange parfait de panoramas époustouflants, d'aventures en montagne et d'une ambiance dynamique</p>
+    </div>
+    <button class="price-bubble">À partir de X€ TTC*</button>
+</div> <!-- Fermeture de la div de Chamomix -->
+
+
+<!-- D'autres destinations cachées au départ -->
+
+  </div>
+</body>
+</html>
