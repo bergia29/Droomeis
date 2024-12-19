@@ -1,0 +1,148 @@
+
+
+/* Style général */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0px;
+  padding: 100px;
+  background-color: #f8f9fa;
+
+}
+
+
+/* En-tête */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #6bbfcb;
+}
+/* Taille du logo */
+.logo-image {
+  width: 120px;
+  height: auto;
+}
+/* Texte du menu*/
+.nav a {
+  margin: 0 10px;
+  color: #000;
+  text-decoration: none;
+}
+/* Animation texte du menu*/
+.nav a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+/* Survole Texte du menu*/
+.nav a:hover {
+  text-decoration: underline;
+}
+
+
+.search-form select {
+  width: 200px; /* Ajuste la largeur du select */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+/* Bouton authentification */
+.auth-buttons .auth-button {
+  margin-left: 10px;
+  background-color: #407bcd;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.auth-buttons .auth-button:hover {
+  background-color: #003d82;
+  transform: scale(1.05);
+}
+
+
+
+/* Section de recherche */
+.search-section {
+  margin-top:0px;
+  padding: 20px;
+  background-color: #d8eafc;
+  text-align: center;
+}
+
+.search-form input, .search-form select, .search-form button {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-form button {
+  background-color: #0056b3;
+  color: white;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #003d82;
+}
+
+/* Pied de page */
+.footer {
+  flex-grow: 1;
+  background-color: #6bbfcb; /* Couleur de fond */
+  font-family: 'Roboto', Arial, sans-serif;
+  position: sticky;
+  bottom: 0px;
+  padding: 15px 0px; /* Espacement intérieur */
+  width: 100%; /* Prendre toute la largeur */
+  justify-items: center;
+  margin-top: auto;
+
+}
+
+.footer a {
+  color: #000000; /* Couleur des liens */
+  text-decoration: none; /* Supprimer le soulignement */
+  margin: 20px; /* Espacement horizontal entre les liens */
+  font-size: 15px;  /* Taille des liens */
+  z-index: 1000; /* S'assure que le footer reste au-dessus du contenu */
+}
+
+.footer img {
+  margin-bottom: -10px;
+  width: 120px; /* Taille du logo */
+  height: auto; /* Maintenir les proportions */
+}
+
+.footer .copyright {
+  color: #000000; /* Couleur du texte de copyright */
+  font-size: 14px; /* Taille du texte */
+  font-style: italic; /* Italique pour le copyright */
+  margin-top: -18px;
+  margin-left: auto; /* Permet de pousser le copyright à droite */
+  margin-right: 10px; /* Décale le copyright de 10 pixels vers la gauche */
+  text-align: right; 
+  justify-items: right;
+}
+.logo-image-footer{
+  text-decoration: none;
+}
+
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
