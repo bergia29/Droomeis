@@ -3,9 +3,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    height: auto; /* 页面占满整个视口高度 */
+    justify-content: center; 
+    align-items: center; 
+    height: auto; 
     flex-direction: column;
     gap: 20px;
     padding: 20px;
@@ -115,6 +115,9 @@ body {
   margin-top: 10px; 
 }
 
+.messagerie{
+   height: calc(100vh - 100px);
+}
 .message {
     text-align: center;
     width: 66.7%;
@@ -263,6 +266,8 @@ body {
 }
 
 /* Zone de Chat*/
+
+
 .container.chat-zone {
   width: 66.67%;
   max-width: 800px;
@@ -365,4 +370,9 @@ body {
 
 .chat-input .send-button:hover {
   background-color: #0056b3;
+}
+.status {
+  font-size: 14px;
+  font-weight: bold;
+  color: green; 
 }
