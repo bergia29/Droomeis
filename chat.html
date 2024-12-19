@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="messagerie.css">
+</head>
+
+     <!-- En-tête avec navigation -->
+  <header class="header">
+    <div class="logo">
+      <a href="accueil.html"><img src="Logo.png" alt="Logo Droomreis" class="logo-image"></a>
+    </div>
+    <nav class="nav">
+      <a href="accueil.html" class="active">Accueil</a>
+      <a href="destination.html">Destinations</a>
+      <a href="messagerie.html">Messagerie</a>
+      <a href="contact.html">Contact</a>
+      <a href="propos.html">A propos de nous</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="Formulaire_inscription.html"class='auth-button'>S'inscrire</a>
+      <a href="Formulaire_connexion.html"class='auth-button'>Se connecter</a>
+    </div>
+  </header>
+
+      <!-- Section de recherche -->
+      <section class="search-section">s
+        <form class="search-form">
+          <input type="text" placeholder="Destination" aria-label="Recherche de destination">
+          <input type="date" aria-label="Choisir une date">
+          <select aria-label="Choisir une destination">
+            <option value="1">Paris</option>
+            <option value="2">Milan</option>
+            <option value="3">Etretat</option>
+            <option value="4">Lyon</option>
+            <option value="5">5+</option>
+          </select>
+          <button type="submit">Rechercher</button>
+        </form>
+      </section>
+      
+<body onload="loadChat()">
+
+        <!-- Zone de Chat-->
+  <div class="container chat-zone">
+    <!--  -->
+    <div class="chat-header">
+      <h2 id="chat_title">Zone de Chat</h2>
+    </div>
+
+    <div class="chat-status">
+      <div class="recipient">
+        <span id="recipient-name"><strong>Nom:</strong> Mr A</span>
+      </div>
+      <div class="status" id="status">
+        <span><strong>Statut:</strong> en ligne</span>
+      </div>
+    </div>
+
+    <!-- Partie 3-->
+    <div class="chat-box" id="chat-box">
+      <!-- Gauche -->
+      <div class="chat-message left">
+        <p class="message-text">Bonjour Madame, j’aimerai avoir des informations concernant les activités du voyage s’il vous plaît, il s’agit de Bali, pour deux semaines.</p>
+        <span class="message-meta">10:00 - Reçu</span>
+      </div>
+      <!-- Droite -->
+      <div class="chat-message right">
+        <p class="message-text">Bonjour Monsieur, en effet les activités de ce voyage sont prévues à partir de la semaine prochaine, pour durée de minimum 3 jours.</p>
+        <span class="message-meta">10:05 - Lu</span>
+      </div>
+      <!-- Gauche -->
+      <div class="chat-message left">
+        <p class="message-text">Je vous remercie pour votre retour.</p>
+        <span class="message-meta">10:10 - Reçu</span>
+      </div>
+    </div>
+
+    <!--  -->
+    <div class="chat-input">
+      <input type="text" id="message-input" placeholder="Écrire un message..." />
+      <button class="send-button" onclick="sendMessage()">Envoyer</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <a href="accueil.html"><img src="Logo.png" alt="Logo Droomreis" class="logo-image-footer"></a>
+    <a href="#">Mentions légales</a>
+    <a href="#">Twitter</a>
+    <a href="#">TikTok</a>
+    <a href="#">Instagram</a>
+    <p class="copyright">Droomreis © 2024</p>
+  </footer>
+    
+  <script src="messagerie.js"></script>
+</body>
+</html>
