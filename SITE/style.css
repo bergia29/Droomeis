@@ -1,0 +1,421 @@
+/* Style général */
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  background-color: #c1d7d0;
+  color: #333;
+
+}
+
+/* En-tête */
+.header {
+  display: flex;
+  align-items: center; /* Centre verticalement tous les enfants */
+  justify-content: space-between; /* Espace entre logo, navigation, et boutons */
+  background-color: #61bdc9;
+  width: 100%;
+  height: 80px; /* Augmente légèrement la hauteur pour équilibrer */
+  padding: 0 20px;
+  /*border-radius: 20px;*/
+  max-width: 100%;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center; /* Centre le logo verticalement */
+  max-width: 100%;
+}
+
+.logo-image {
+  height: 250px; /* Ajuste pour correspondre à la hauteur de l'en-tête */
+  margin-right: 180px;
+  margin-top: 20px;
+  display: flex;
+  max-width: 100%;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 30px; /* Espacement horizontal entre les liens */
+  margin-left: 200px;
+  max-width: 100%;
+}
+
+.mald {
+  margin-top: -40px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  max-width: 100%;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Boutons d'authentification */
+.auth-buttons {
+  margin-left: auto; /* Pousse les boutons vers la droite */
+  display: flex;
+  gap: 10px; /* Espace entre les boutons */
+  display: flex;
+  
+}
+
+.auth-buttons button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+}
+
+.auth-buttons button:hover {
+  background-color: #003d82; /* Couleur au survol */
+  display: flex;
+}
+
+/* Grille d'images ou d'éléments */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  gap: 0px; /* Espacement entre les éléments */
+  width: 90%; /* Largeur totale de la grille */
+  margin-left: 180px ;
+  margin-top: -100px;
+  align-items: center;
+
+
+  }
+
+.grid-item {
+  border: 1px solid #c1d7d0; /* Bordure pour les cases */
+  background-color: #c1d7d0; /* Couleur de fond des cases */
+  height: 280px; /* Hauteur fixe pour chaque case */
+  border-radius: 20px;
+  width: 480px;
+  margin-left: 7px;
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  margin-top: 250px;
+  position: relative;
+}
+
+.grid-item-image {
+  width: 100%;  /* Remplir la largeur de la cellule */
+  height: 100%; /* Remplir la hauteur de la cellule */
+  border-radius: 20px;
+  object-fit: cover; /* Assurez-vous que l'image est entièrement visible sans être coupée */
+  display: flex; 
+  border: 1px solid #000;
+  margin-right: 100px;
+  position: relative;
+}
+
+/* Conteneur de la barre d'onglets */
+.tab-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid black
+  
+}
+
+/* Section des filtres */
+.filter-bubbles {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: -220px;
+  padding: 10px;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 60vh; /* Hauteur ajustée pour éviter trop d'espace vertical */
+  gap: 10px; /* Espacement horizontal entre les bulles Budget Faible et Budget Premium */
+  flex-direction: row; /* Organise les bulles côte à côte (horizontalement) */
+  margin-bottom: -100px;
+}
+
+.bubble {
+  padding: 1px 7px; /* Réduit l'espace à l'intérieur des bulles */
+  margin: 10px; /* Espacement réduit autour des bulles */
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #F5F5DC ; /* Exemple de couleur */
+  color: black;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  display: flex;
+  padding-top: 3px;
+}
+
+
+.bubble:hover {
+  background-color: #0056b3; /* Changer la couleur de fond au survol */
+  color: white; /* Changer la couleur du texte au survol */
+  display: flex;
+}
+
+/* Bulle active (lorsque l'utilisateur a sélectionné cette option) */
+.bubble.active {
+  transform: scale(1.1); /* Agrandir la bulle lorsqu'elle est active */
+  background-color: #0056b3; /* Couleur de fond pour la bulle active */
+}
+
+.bubble img {
+  margin-right: 5px;
+}
+
+/* Cacher les éléments non correspondants (utilisé via JavaScript) */
+.grid-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.grid-item.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+.view-all-container {
+  position: relative;
+  margin-bottom: -100px; /* Place le bouton à 20px du bas de la page */
+  left: 50%; /* Place le bouton au centre horizontalement */
+  transform: translateX(-50%); /* Centre précisément le bouton */
+  text-align: center; /* Centre le texte du bouton */
+  width: auto; /* S'assure que le bouton est centré sur toute la largeur */
+}
+
+.view-all-container .bubble {
+  background-color: #17a2b8; /* Couleur pour Voir Tout */
+}
+
+/* Ajuste la disposition des items pour aligner la légende en dessous */
+.grid-item {
+  display: flex;
+  flex-direction: column; /* Aligne les éléments verticalement */
+  align-items: center; /* Centre le contenu horizontalement */
+  padding: 10px; /* Espace autour des éléments */
+  margin-left: 0px;
+  position: relative;
+}
+
+/* Style pour les descriptions sous chaque image */
+.image-caption {
+  text-align: center; /* Centre le texte sous l'image */
+  margin-top: 10px; /* Espace entre l'image et le texte */
+  font-size: 14px;
+  color: #333;
+}
+
+.image-caption p strong{
+  margin-right: 120px;  
+}
+
+.image-caption strong {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.price-bubble {
+  display: inline-block;     /* Assurez-vous que l'élément soit en ligne pour s'étirer horizontalement */
+  padding: 10px 10px;        /* Ajustez l'espacement intérieur pour rendre la bulle plus longue horizontalement */
+  background-color: #1f5091; /* Couleur de fond */
+  color: white;              /* Couleur du texte */
+  border-radius: 50px;       /* Coins arrondis */
+  font-weight: bold;         /* Poids du texte */
+  text-align: center;        /* Centrer le texte */
+  white-space: nowrap;       /* Empêche le texte de revenir à la ligne */
+  width: auto;               /* Laisser l'élément s'adapter à la taille du texte */
+  max-width: none;           /* Désactivez la largeur maximale pour que la bulle puisse s'étirer */
+  height: auto;              /* Laissez la hauteur s'adapter au contenu */
+  margin-left: 215px;
+  margin-top: -50px;
+
+}
+
+
+.price-bubble1 {
+  display: inline-block;     /* Assurez-vous que l'élément soit en ligne pour s'étirer horizontalement */
+  padding: 10px 10px;        /* Ajustez l'espacement intérieur pour rendre la bulle plus longue horizontalement */
+  background: transparent; /* Couleur de fond */
+  color: gray;              /* Couleur du texte */
+  border: none;       /* Coins arrondis */
+  font-weight: bold;         /* Poids du texte */
+  text-align: center;        /* Centrer le texte */
+  white-space: nowrap;       /* Empêche le texte de revenir à la ligne */
+  width: auto;               /* Laisser l'élément s'adapter à la taille du texte */
+  max-width: none;           /* Désactivez la largeur maximale pour que la bulle puisse s'étirer */
+  height: auto;              /* Laissez la hauteur s'adapter au contenu */
+  margin-left: 310px;
+  margin-top: -20px;
+  position: absolute;
+  font-size: 3.5rem;
+  
+}
+
+ .price-bubble1:hover {
+      color: #FF0000; /* Change la couleur au survol */
+      transform: scale(0.8); /* Agrandit légèrement */
+}
+
+.price-bubble1.active {
+  color: red; /* Couleur du cœur rempli */
+  transform: scale(0.8); /* Effet d'agrandissement léger */
+}
+
+
+/* Style de la modale */
+.modal {
+  display: none; /* Cachée par défaut */
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrer la modale */
+  background-color: rgba(0, 0, 0, 0); /* Fond sombre */
+  z-index: 1000;
+  width: 50%; /* Largeur réduite à 60% de la fenêtre */
+  height: 50%; /* Hauteur réduite à 60% de la fenêtre */
+  overflow: hidden; /* Rogner tout contenu qui dépasse */
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+
+
+
+/* Iframe avec rognage : afficher uniquement une partie de la page */
+iframe {
+  position: absolute;
+  top: -40px; /* Décalage du contenu à l'intérieur de l'iframe pour rogner le haut */
+  left: -200px; /* Décalage du contenu à l'intérieur de l'iframe pour rogner la gauche */
+  width: 200%; /* Largeur plus grande pour rogner les bords */
+  height: 150%; /* Hauteur plus grande pour rogner les bords */
+  transform-origin: top right;
+  transform: scale(0.8); /* Retirer toute mise à l'échelle interne */
+  object-fit: cover; /* Permet de remplir l'iframe sans déformation */
+}
+
+.close {
+  position: absolute; /* Positionnement absolu */
+  top: 0; /* Espacement du haut */
+  right: 205px; /* Espacement de la droite */
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1100;
+
+}
+
+        /* Le bouton de fermeture */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+  /* Effet au survol */
+ .price-bubble:hover {
+      background-color: #0056b3; /* Change la couleur au survol */
+      transform: scale(1.1); /* Agrandit légèrement */
+}
+
+ .image-caption p {
+  margin-left: -100px /* Espacement entre les lignes */
+}
+
+.caption {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+  text-align: center;
+  width: 350px; /* Longueur définie */
+  word-wrap: break-word; /* Permet de couper le mot au besoin */
+  padding-right: 50px;
+  margin-right: 100px;
+
+}
+
+.logo-filtres {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+}
+
+/* Style des onglets */
+* {
+  box-sizing: border-box; /* Les bordures et paddings sont inclus dans la taille totale */
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.grid-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.grid-item.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
+
+  /* Cacher les éléments non correspondants (utilisé via JavaScript) */
+.grid-item {
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s; /* Ajouté pour gérer la visibilité */
+}
+
+.grid-item.hidden {
+  opacity: 0; /* Transparence de l'élément caché */
+  visibility: hidden; /* Masquer complètement l'élément tout en le laissant dans le DOM */
+  transform: scale(0.9); /* Réduit légèrement la taille de l'élément */
+  pointer-events: none; /* Empêche l'interaction avec l'élément caché */
+}
+
+.grid-item:not(.hidden) {
+  opacity: 1; /* Rendre visible les éléments non cachés */
+  visibility: visible; /* S'assurer que l'élément est visible */
+  transform: scale(1); /* Restaure la taille originale */
+  pointer-events: auto; /* Permet l'interaction avec l'élément visible */
+}
+
