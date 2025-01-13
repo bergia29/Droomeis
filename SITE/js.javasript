@@ -1,0 +1,61 @@
+// Récupérer les boutons de filtre et les éléments de la grille
+const filterButtons = document.querySelectorAll('.bubble'); // Boutons de filtre
+const gridItems = document.querySelectorAll('.grid-item'); // Éléments de la grille
+
+// Tableau pour stocker les catégories sélectionnées
+let selectedCategories = [];
+
+// Ajouter un événement de clic à chaque bouton de filtre
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filterCategory = button.getAttribute('data-filter'); // Récupère la catégorie du bouton
+
+    // Ajouter ou retirer la catégorie de la liste des filtres sélectionnés
+    if (selectedCategories.includes(filterCategory)) {
+      // Si la catégorie est déjà sélectionnée, la retirer
+      selectedCategories = selectedCategories.filter(cat => cat !== filterCategory);
+      button.classList.remove('active'); // Retirer l'effet visuel "actif"
+    } else {
+      // Si la catégorie n'est pas sélectionnée, l'ajouter
+      selectedCategories.push(filterCategory);
+      button.classList.add('active'); // Ajouter l'effet visuel "actif"
+    }
+
+    // Mettre à jour l'affichage des éléments
+    updateGridDisplay();
+  });
+});
+
+// Fonction pour mettre à jour l'affichage des éléments
+function updateGridDisplay() {
+  // D'abord, on cache tous les éléments qui ne correspondent pas aux filtres
+  gridItems.forEach(item => {
+    const itemCategories = item.getAttribute('data-category').trim().split(' '); // Récupérer les catégories de l'élément
+
+    // Vérifier si l'élément correspond à toutes les catégories sélectionnées
+    const isMatch = selectedCategories.length === 0 || // Si aucun filtre n'est sélectionné, tout afficher
+      selectedCategories.every(category => itemCategories.includes(category)); // Vérifier que l'élément contient **toutes** les catégories sélectionnées
+
+    // Montrer ou cacher l'élément en fonction du filtre
+    if (isMatch) {
+      item.classList.remove('hidden'); // Afficher l'élément
+    } else {
+      item.classList.add('hidden'); // Masquer l'élément
+    }
+  });
+
+  // Réorganiser les éléments visibles pour combler les trous
+  rearrangeVisibleItems();
+}
+
+// Fonction pour réorganiser les éléments visibles (en haut de la grille)
+function rearrangeVisibleItems() {
+  // Récupérer tous les éléments visibles
+  const visibleItems = Array.from(gridItems).filter(item => !item.classList.contains('hidden'));
+
+  // Réorganiser les éléments visibles dans l'ordre du DOM pour combler les trous en haut
+  visibleItems.forEach(item => {
+    // Déplacer l'élément au début de la grille (avant le premier élément)
+    item.parentNode.prepend(item);
+  });
+}
