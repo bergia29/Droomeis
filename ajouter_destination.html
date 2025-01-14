@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une destination</title>
+    <!-- Lien vers ton fichier CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Formulaire d'ajout de destination -->
+    <form id="form-ajouter-destination" method="POST" enctype="multipart/form-data">
+        <label for="nom">Nom de la destination:</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+        
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+        
+        <label for="ville">Ville:</label>
+        <input type="text" id="ville" name="ville" required><br><br>
+        
+        <label for="pays">Pays:</label>
+        <input type="text" id="pays" name="pays" required><br><br>
+        
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required><br><br>
+        
+        <label for="prix">Prix:</label>
+        <input type="number" id="prix" name="prix" step="0.01" required><br><br>
+        
+        <label for="categorie">Catégorie:</label>
+        <input type="text" id="categorie" name="categorie" required><br><br>
+        
+        <input type="submit" value="Ajouter la destination">
+    </form>
+
+    <!-- Lien vers ton fichier JavaScript contenant l'AJAX -->
+    <script src="adddestination.js"></script>
+
+</body>
+</html>

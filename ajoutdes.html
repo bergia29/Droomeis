@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une destination[ADMIN]</title>
+    <link rel="stylesheet" href="styleajoutdes.css"> <!-- Lien vers la feuille de style -->
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Ajouter une Destination</h1>
+    <form method="post" action="ajouter_destinations.php" enctype="multipart/form-data" class="destination-form">
+        
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required class="input-field"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="ville">Ville:</label>
+            <input type="text" id="ville" name="ville" required class="input-field">
+        </div>
+
+        <div class="form-group">
+            <label for="pays">Pays:</label>
+            <input type="text" id="pays" name="pays" required class="input-field">
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required class="input-field">
+        </div>
+
+        <div class="form-group">
+            <label for="prix">Prix:</label>
+            <input type="number" id="prix" name="prix" step="0.01" required class="input-field">
+        </div>
+
+        <div class="form-group">
+            <label>Catégorie(s):</label><br>
+            <div class="checkbox-group">
+                <input type="checkbox" id="mer" name="categorie[]" value="mer" class="checkbox">
+                <label for="mer">Mer</label>
+                <input type="checkbox" id="plongée" name="categorie[]" value="plongée" class="checkbox">
+                <label for="plongée">Plongée</label>
+                <input type="checkbox" id="circuit" name="categorie[]" value="circuit-détente" class="checkbox">
+                <label for="circuit">Circuit Détente</label>
+                <input type="checkbox" id="desert" name="categorie[]" value="desert" class="checkbox">
+                <label for="desert">Désert</label>
+                <input type="checkbox" id="randonnée" name="categorie[]" value="randonnée" class="checkbox">
+                <label for="randonnée">Randonnée</label>
+                <input type="checkbox" id="safari" name="categorie[]" value="safari" class="checkbox">
+                <label for="safari">Safari</label>
+                <input type="checkbox" id="musée" name="categorie[]" value="musée" class="checkbox">
+                <label for="musée">Musée</label>
+                <input type="checkbox" id="escalade" name="categorie[]" value="escalade" class="checkbox">
+                <label for="escalade">Escalade</label>
+                <input type="checkbox" id="artisanat" name="categorie[]" value="artisanat" class="checkbox">
+                <label for="artisanat">Artisanat</label>
+                <input type="checkbox" id="ville" name="categorie[]" value="ville" class="checkbox">
+                <label for="ville">Ville</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Ajouter la destination" class="submit-button">
+        </div>
+        
+    </form>
+</div>
+
+</body>
+</html>
