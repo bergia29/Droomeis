@@ -17,15 +17,22 @@ $email_utilisateur = htmlspecialchars($_SESSION['email']);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Droomreis</title>
+  <title>Accueil - Droomreis</title>
   
-  <link rel="stylesheet" href="General.css">
-  <link rel="stylesheet" href="Style_accueil_php.css">
-  <script src="script_accueil.js" defer></script>
+  <!--Fichier css pour le menu, la barre de recherche et le pied de-->
+  <link rel="stylesheet" href="General.css"> 
+  <link rel="stylesheet" href="Style_accueil.css">
+  <script src="Menu_Recherche.js" defer></script>
+
+
+  <!--Logo dans l'onglet-->
+  <link rel="icon" href="Flaticon1.png" type="image/png" sizes="48x48">
+
 </head>
 
 <body>
-  <!-- En-tête avec navigation -->
+
+    <!-- En-tête avec navigation -->
   <header class="header">
     <div class="logo">
       <a href="accueil.php"><img src="Logo.png" alt="Logo Droomreis" class="logo-image"></a>
@@ -47,66 +54,73 @@ $email_utilisateur = htmlspecialchars($_SESSION['email']);
     <p>Bienvenue, <?php echo $email_utilisateur; ?>!</p>
   </section>
 
-  <!-- Section de recherche -->
   <section class="search-section">
-    <form class="search-form" method="GET" action="recherche.php">
-      <label for="destination">Destination:</label>
-      <input type="text" id="destination" name="destination" placeholder="Destination" aria-label="Recherche de destination">
-      
-      <label for="date">Date:</label>
-      <input type="date" id="date" name="date" aria-label="Choisir une date">
-      
-      <label for="destination-select">Choisir une destination:</label>
-      <select id="destination-select" name="destination-select" aria-label="Choisir une destination">
-        <option value="1">Paris</option>
-        <option value="2">Milan</option>
-        <option value="3">Etretat</option>
-        <option value="4">Lyon</option>
-        <option value="5">5+</option>
-      </select>
-      
-      <button type="submit">Rechercher</button>
-    </form>
+      <form class="search-form" action="recherche.php" method="GET">
+        <input type="text" placeholder="Pays" name="destination" aria-label="Recherche de destination"id="search-input"autocomplete="off">
+        <input type="date" name="date" aria-label="Choisir une date">
+        <select name="ville" aria-label="Choisir une destination">
+          <?php include 'get_villes.php'; ?>
+        </select>
+        <button type="submit">Rechercher</button>
+      </form>
   </section>
 
-  <!-- Section avec images de destinations -->
-  <section class="destinations-section">
-    <!-- Bouton gauche -->
-    <button class="scroll-button left">&lt;</button>
-    
-    <!-- Galerie d'images -->
-    <div class="image-gallery">
-      <div class="image-container">
-        <img src="Destination_Maldives.jpg" alt="Plage et lagon des Maldives" />
-        <div class="hover-text">Maldives</div>
+
+  <div class="main-content">
+    <!-- Section avec images de destinations -->
+    <section class="destinations-section">
+      <!-- Galerie d'images -->
+      <div class="image-gallery">
+        <div class="image-container">
+          <img src="Destination_Maldives.jpg" alt="Destination Maldives">
+          <div class="hover-text">Maldives</div>
+        </div>
+        <div class="image-container">
+          <img src="Destination_Niagara.jpg" alt="Chute du Niagara">
+          <div class="hover-text">Niagara</div>
+        </div>
+        <div class="image-container">
+          <img src="Destination_Paris.jpg" alt="Paris">
+          <div class="hover-text">Paris</div>
+        </div>
+        <div class="image-container">
+          <img src="Destination_Milan.png" alt="Milan">
+          <div class="hover-text">Milan</div>
+        </div>
+        <div class="image-container">
+          <img src="Destination-_Madrid.jpg" alt="Madrid">
+          <div class="hover-text">Madrid</div>
+        </div>
       </div>
-      <div class="image-container">
-        <img src="Destination_Niagara.jpg" alt="Chute du Niagara" />
-        <div class="hover-text">Niagara</div>
+    </section>
+
+
+    <!-- Section des avis fictifs -->
+    <section class="reviews-section">
+      <div class="review">
+        <div class="review-text">
+          <p><strong>John Doe</strong></p>
+          <p>"Super expérience, les guides étaient incroyables et les destinations époustouflantes. Je recommande vivement Droomreis !"</p>
+        </div>
       </div>
-      <div class="image-container">
-        <img src="Destination_Paris.jpg" alt="Vue de Paris" />
-        <div class="hover-text">Paris</div>
+      
+      <div class="review">
+        <div class="review-text">
+          <p><strong>Sarah Martin</strong></p>
+          <p>"Des vacances inoubliables ! Le service était parfait et les guides locaux ont fait toute la différence. Une expérience à refaire."</p>
+        </div>
       </div>
-      <div class="image-container">
-        <img src="Destination_Milan.png" alt="Vue de Milan" />
-        <div class="hover-text">Milan</div>
+      <div class="review">
+        <div class="review-text">
+          <p><strong>Jack Dawson</strong></p>
+          <p>"Des vacances inoubliables ! Le service était parfait et les guides locaux ont fait toute la différence. Une expérience à refaire."</p>
+        </div>
       </div>
-      <div class="image-container">
-        <img src="Destination_Madrid.jpg" alt="Vue de Madrid" />
-        <div class="hover-text">Madrid</div>
-      </div>
-      <div class="image-container">
-        <img src="Destination_Amazonie.jpg" alt="Forêt tropicale de l'Amazonie" />
-        <div class="hover-text">Amazonie</div>
-      </div>
-    </div>
-    
-    <!-- Bouton droit -->
-    <button class="scroll-button right">&gt;</button>
-  </section>
-  
-  <!-- Pied de page -->
+    </section>
+  </div>
+
+
+  <!-- Footer-->
   <footer>
     <div class="footer-content">
       <div class="img_footer">
