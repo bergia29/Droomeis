@@ -1,0 +1,101 @@
+/* Style général */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+  
+  
+/*  Bloc */
+.Contact {
+  width: 700px;              /* Largeur du formulaire */
+  background-color: white;
+  padding: 40px;             /* Espacement interne du formulaire */
+  border-radius: 8px;        /* Coins arrondis */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour du formulaire */
+  margin: 0 auto;            /* Centrer horizontalement */
+}
+
+.Contact h1 {
+  font-weight: 500;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.Contact p {
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+/* contact.css */
+.Contact {
+  max-width: 600px;
+  margin: 0px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+  
+.Contact h1 {
+  text-align: center;
+  color: #007bff;
+}
+
+.Contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Contact form div {
+  margin-bottom: 15px;
+}
+
+.Contact label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.Contact input, 
+.Contact select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+  
+.Contact input:focus, 
+.Contact select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+.Contact_admin {
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #555;
+}
+textarea {
+  width: 100%; /* Prend toute la largeur du conteneur */
+  height: 200px; /* Hauteur plus grande */
+  padding: 10px; /* Espacement interne */
+  font-size: 16px; /* Taille de police */
+  border: 1px solid #ddd; /* Bordure légère */
+  border-radius: 4px; /* Coins arrondis */
+  resize: vertical; /* Permet à l'utilisateur d'ajuster verticalement */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+textarea:focus {
+  outline: none; /* Supprime l'effet de focus par défaut */
+  border-color: #007bff; /* Bordure bleue au focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Glow au focus */
+}
+  

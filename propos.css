@@ -1,0 +1,29 @@
+/* Style général */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  
+/* Formulaire de connexion */
+.Connexion {
+    width: 700px;              /* Largeur du formulaire */
+    background-color: white;
+    padding: 40px;             /* Espacement interne du formulaire */
+    border-radius: 8px;        /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour du formulaire */
+    margin: 0 auto;            /* Centrer horizontalement */
+}
+
+.Connexion h1 {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.Connexion p {
+    font-weight: 300;
+    margin-bottom: 20px;
+}
