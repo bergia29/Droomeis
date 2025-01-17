@@ -37,11 +37,48 @@ function loadContacts() {
 function filterContacts() {
   const searchQuery = document.querySelector('.search-input').value.toLowerCase();
   const contactItems = document.querySelectorAll('.contact-item');
+  
+  let foundLocal = false;
 
   contactItems.forEach(item => {
     const contactName = item.querySelector('.contact-name').innerText.toLowerCase();
-    item.style.display = contactName.includes(searchQuery) ? 'flex' : 'none';
+    if (contactName.includes(searchQuery)) {
+      item.style.display = 'flex';
+      foundLocal = true;
+    } else {
+      item.style.display = 'none';
+    }
   });
+
+  if (!foundLocal && searchQuery) {
+    searchContactInDB(searchQuery);
+  }
+}
+
+function searchContactInDB(searchQuery) {
+  fetch(`search_contact.php?name=${encodeURIComponent(searchQuery)}`)
+    .then(response => response.json())
+    .then(contact => {
+      const contactList = document.getElementById('contactList');
+      if (contact && contact.ID && contact.Name) {
+        // 
+        const contactItem = `
+          <div class="contact-item" onclick="openChat(${contact.ID}, '${contact.Name}')">
+            <div class="contact-info">
+              <h3 class="contact-name">${contact.Name}</h3>
+              <p>${contact.LastMessage || 'Aucune nouvelle'}</p>
+            </div>
+            <div class="status" style="color: ${contact.Status === 'en ligne' ? 'green' : 'red'};">
+              ${contact.Status || 'hors connexion'}
+            </div>
+          </div>
+        `;
+        contactList.innerHTML = contactItem; // 
+        // 
+        contactList.innerHTML = "<p style='text-align: center; color: gray;'>Aucun contact trouvé。</p>";
+      }
+    })
+    .catch(error => console.error('Erreur lors de la recherche du contact dans la base de données:', error));
 }
 
 /***********************
