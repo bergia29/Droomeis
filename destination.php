@@ -49,15 +49,18 @@ $conn->close();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Droomreis - Page d'accueil</title>
+  <!--Logo dans l'onglet-->
+  <link rel="icon" href="Flaticon1.png" type="image/png" sizes="48x48">
+
+  <title>Accueil - Droomreis</title>
   <link rel="stylesheet" href="style.css">
   <script src="java.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style >
-.grid-item {
-display: flex;
-}
-</style>
+    .grid-item {
+    display: flex;
+    }
+  </style>
 </head>
 <body>
 
@@ -65,12 +68,12 @@ display: flex;
     <div class="logo">
         <img src="Logo.png" alt="Logo Droomreis" class="logo-image">
     </div>
-    <nav class="nav">
-        <a href="accueil.php">Accueil</a>
-        <a href="index.php">Destinations</a>
-        <a href="#">Messagerie</a>
-        <a href="#">Contact</a>
-        <a href="#">A propos de nous</a>
+    <nav class="nav"> <!-- Menu -->
+      <a href="accueil.php" class="active">Accueil</a>
+      <a href="destination.php">Destinations</a>
+      <a href="messagerie.php">Messagerie</a>
+      <a href="contact.php">Contact</a>
+      <a href="propos.php">À propos de nous</a>
     </nav>
     <div class="auth-buttons-container">
         <div class="auth-buttons">
@@ -89,7 +92,7 @@ display: flex;
     <!-- Remplacer le contenu par l'iframe contenant la page que vous avez créée -->
     <iframe src="popup.html" width="100%" height="400px" style="border: none;"></iframe>
   </div>
-</div>
+  </div>
 
   <div class="filter-bubbles">
   <button class="bubble" data-filter="mer"><img src="c.png" alt="mer" class="logo-filtres">Mer</button>
