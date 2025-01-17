@@ -106,17 +106,31 @@ $email_utilisateur = htmlspecialchars($_SESSION['email']);
     <button class="scroll-button right">&gt;</button>
   </section>
   
-  <h1>Droomreis est un site de réservation de guides locaux. 
-    Vous pourrez préparer vos vacances en toute tranquillité et vous laisser emporter par nos guides locaux!</h1>
-
   <!-- Pied de page -->
-  <footer class="footer">
-    <a href="accueil.php"><img src="Logo.png" alt="Logo Droomreis" class="logo-image-footer"></a>
-    <a href="#">Mentions légales</a>
-    <a href="#">Twitter</a>
-    <a href="#">TikTok</a>
-    <a href="#">Instagram</a>
-    <p class="copyright">Droomreis © 2024</p>
+  <footer>
+    <div class="footer-content">
+      <div class="img_footer">
+        <a href="accueil.php"><img src="Logo.png" alt="Logo Droomreis" class="logo-size"></a>
+      </div>
+      <table class="table_footer">
+        <tr>
+          <th>Assistance et FAQ</th>
+          <th>Réseaux sociaux</th>
+          <th>Politiques</th>
+        </tr>
+        <tr>
+          <td><a href="faq.php">FAQ</a></td>
+          <td><a href="#">Instagram</a></td>
+          <td><a href="#">Mentions légales</a></td>
+        </tr>
+        <tr>
+          <td><a href="contact.php">Nous Contacter</a></td>
+          <td></td>
+          <td><a href="#">Cookies</a></td>
+        </tr>
+      </table>
+      <p class="copyright">Droomreis © 2025</p>
+    </div>
   </footer>
 </body>
 </html>
