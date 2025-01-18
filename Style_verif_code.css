@@ -1,0 +1,148 @@
+/* Style_verif_code.css */
+
+    body {
+        background: #dee6e2;
+        font-family: 'Montserrat', sans-serif;
+        color: #303030;
+        justify-content: center;    /* Centrer horizontalement */
+        align-items: center;        /* Centrer verticalement */
+        min-height: 100vh;              /* Prendre toute la hauteur de la fenêtre */
+        display: flex;
+        flex-direction: column;
+    }
+
+/* En-tête */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px; /*épaisseur en tete*/
+    background-color: #6bbfcb;
+    width: 97%;                /* Prendre toute la largeur */
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 120px; /* Réduire la taille du logo */
+    height: auto;
+}
+
+.nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.auth-buttons .button {
+    background-color:#407bcd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.Verification {
+    margin:auto;
+    margin-top: calc(50vh - 150px); 
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.Verification h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.Verification p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.Verification form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Verification input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.Verification input[type="text"]:focus {
+    border-color: #407bcd;
+    outline: none;
+}
+
+.Verification button {
+    background: #407bcd;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Verification button:hover {
+    background: #45a049;
+}
+
+
+/* Pied de page */
+.footer {
+    background-color: #6bbfcb;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    bottom: 0; 
+    width: 100%;
+    z-index: 10;
+    margin-top: auto; /* Assure que le footer reste en bas */
+  }
+  
+  .footer a {
+    margin: 0 15px; 
+    text-decoration: none;
+    color: #0056b3;
+    font-size: 14px;
+  }
+  
+  /* Logo */
+  .logo-image-footer {
+    margin-right: 15px; 
+    width: 150px;
+    height: auto;
+  }
+  
+  .footer .copyright {
+    color: #000000;
+    font-size: 12px;
+    margin-top: 10px; 
+  }

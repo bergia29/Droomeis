@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Contenu de l'email
             $mail->isHTML(true);
             $mail->Subject = 'Réinitialisation de votre mot de passe';
-            $mail->Body    = "Bonjour,<br><br>Cliquez sur ce lien pour réinitialiser votre mot de passe : <a href='{$resetLink}'>Réinitialiser le mot de passe</a><br><br>Ce lien expirera dans 1 heure.";
+            $mail->Body    = "Bonjour,<br><br>Cliquez sur ce lien pour reinitialiser votre mot de passe : <a href='{$resetLink}'>Reinitialiser le mot de passe</a><br><br>Ce lien expirera dans 1 heure.";
 
             // Envoyer l'email
             $mail->send();

@@ -18,10 +18,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ':description' => $description,
             ':localisation' => $localisation
         ]);
-        echo "Destination ajoutée avec succès.";
-    } else {
-        echo "Tous les champs sont obligatoires.";
-    }
+       // Afficher un message de succès via JavaScript
+       echo "<script type='text/javascript'>
+       alert('Destination ajoutée avec succès.');
+       window.location.href = 'dashboard.php'; // Redirection vers la page principale
+     </script>";
+} else {
+// Afficher un message d'erreur si les champs sont vides
+echo "<script type='text/javascript'>
+       alert('Tous les champs sont obligatoires.');
+     </script>";
+}
 }
 ?>
 

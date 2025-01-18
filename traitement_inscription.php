@@ -1,23 +1,25 @@
 <?php
-// Configuration des informations de connexion à la base de données
-$servername = "localhost"; // Nom d'hôte (souvent localhost)
-$username = "root";        // Nom d'utilisateur de la base de données
-$password = "";            // Mot de passe de la base de données (s'il y en a un)
-$dbname = "mydb";          // Nom de la base de données
+// Inclusion de la bibliothèque PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php'; // Si vous utilisez Composer
 
-// Connexion à la base de données avec PDO
+// Configuration des informations de connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mydb";
+
 try {
-    $conn = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]);
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
 
-// Vérification si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Vérification que les champs ne sont pas vides
     if (isset($_POST['email'], $_POST['password'], $_POST['nom'], $_POST['prénom'], $_POST['dateNaissance'], $_POST['adressePostale'], $_POST['role'])) {
-
-        // Récupération des données du formulaire
         $email = $_POST['email'];
         $password = $_POST['password'];
         $nom = $_POST['nom'];
@@ -26,57 +28,78 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $adressePostale = $_POST['adressePostale'];
         $role = $_POST['role'];
 
-        // Validation de l'email
+        // Validation des champs
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo "Erreur : L'email n'est pas valide.";
+            echo "Erreur : Email invalide.";
             exit;
         }
 
-        // Validation de la date de naissance
-        $datePattern = '/\d{4}-\d{2}-\d{2}/'; // Format YYYY-MM-DD
-        if (!preg_match($datePattern, $dateNaissance)) {
-            echo "Erreur : La date de naissance n'est pas valide.";
-            exit;
-        }
-
-        // Validation du mot de passe (minimum 8 caractères, une majuscule, un chiffre)
         if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password) || !preg_match('/[0-9]/', $password)) {
-            echo "Erreur : Le mot de passe doit contenir au moins 8 caractères, une majuscule et un chiffre.";
+            echo "Erreur : Mot de passe invalide.";
             exit;
         }
 
-        // Sécurisation du mot de passe avec password_hash
+        // Vérifier si l'email existe déjà dans la base de données
+        $stmt = $conn->prepare("SELECT idUtilisateur FROM utilisateur WHERE emailU = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            echo "Erreur : L'email est déjà utilisé.";
+            exit;
+        }
+
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        // Préparation de la requête SQL pour insérer les données dans la table Utilisateur
-        $stmt = $conn->prepare("INSERT INTO `Utilisateur` (emailU, passwordU, nomU, prénomU, dateNaissanceU, adressePostalU, role) VALUES (:email, :password, :nom, :prenom, :dateNaissance, :adressePostale, :role)");
+        // Génération du code de vérification
+        $verificationCode = rand(100000, 999999);
 
-        // Lier les paramètres à la requête
-        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-        $stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
-        $stmt->bindValue(':nom', $nom, PDO::PARAM_STR);
-        $stmt->bindValue(':prenom', $prenom, PDO::PARAM_STR);
-        $stmt->bindValue(':dateNaissance', $dateNaissance, PDO::PARAM_STR);
-        $stmt->bindValue(':adressePostale', $adressePostale, PDO::PARAM_STR);
-        $stmt->bindValue(':role', $role, PDO::PARAM_STR);
+        // Insérer l'utilisateur dans la base de données
+        $stmt = $conn->prepare("INSERT INTO utilisateur (emailU, passwordU, nomU, prénomU, dateNaissanceU, adressePostalU, role, code_verification, is_verified) 
+        VALUES (:email, :password, :nom, :prenom, :dateNaissance, :adressePostale, :role, :code_verification, 0)");
 
-        // Exécution de la requête
-        if ($stmt->execute()) {
-            // Redirection vers la page de connexion après une inscription réussie
-            header('Location: Formulaire_connexion.html');
-            exit; // Assurez-vous d'arrêter l'exécution après la redirection
-        } else {
-            echo "Erreur : Impossible de s'inscrire. Veuillez réessayer.";
+        $stmt->execute([
+            ':email' => $email,
+            ':password' => $hashedPassword,
+            ':nom' => $nom,
+            ':prenom' => $prenom,
+            ':dateNaissance' => $dateNaissance,
+            ':adressePostale' => $adressePostale,
+            ':role' => $role,
+            ':code_verification' => $verificationCode
+        ]);
+
+        // Envoi de l'email de vérification avec PHPMailer
+        $mail = new PHPMailer(true);
+        try {
+            // Configuration du serveur SMTP
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com'; // Utiliser votre serveur SMTP
+            $mail->SMTPAuth = true;
+            $mail->Username = 'bignondjidonou@gmail.com'; // Remplacez par votre adresse e-mail
+            $mail->Password = 'rtej ldjr zibc lgbz'; // Remplacez par votre mot de passe ou mot de passe d'application
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
+
+            // Expéditeur et destinataire
+            $mail->setFrom('bignondjidonou@gmail.com', 'Admin');
+            $mail->addAddress($email);
+
+            // Contenu de l'email
+            $mail->isHTML(true);
+            $mail->Subject = 'Vérification de votre compte';
+            $mail->Body    = "Bonjour $prenom,<br><br>Merci pour votre inscription !<br>Votre code de verification est : <b>{$verificationCode}</b><br><br>Veuillez entrer ce code sur notre site pour activer votre compte.<br><br>Cordialement,<br>L'equipe Droomreis.";
+
+            // Envoyer l'email
+            $mail->send();
+            echo "Inscription réussie. Un e-mail de vérification a été envoyé à votre adresse.";
+
+        } catch (Exception $e) {
+            echo "Erreur lors de l'envoi de l'e-mail : {$mail->ErrorInfo}";
         }
     } else {
-        echo "Erreur : Tous les champs doivent être remplis.";
+        echo "Erreur : Tous les champs sont obligatoires.";
     }
-
-    // Fermeture de la connexion
-    $conn = null;
 }
-var_dump($_POST);
-exit;
-
-
 ?>

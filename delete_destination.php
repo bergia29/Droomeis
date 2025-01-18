@@ -11,7 +11,17 @@ if (isset($_GET['id'])) {
     $id = intval($_GET['id']);  // On récupère l'ID de la destination à supprimer
     $stmt = $conn->prepare("DELETE FROM destination WHERE idDestination = :id");
     $stmt->execute([':id' => $id]);
-    echo "<p>La destination a été supprimée avec succès.</p>";
+    // Affichage d'un message de succès via une alerte JavaScript
+    echo "<script type='text/javascript'>
+    alert('La destination a été supprimée avec succès.');
+    window.location.href = 'dashboard.php'; // Redirection vers la page principale
+  </script>";
+} else {
+// Affichage d'un message d'erreur si la destination n'existe pas
+echo "<script type='text/javascript'>
+    alert('Destination non trouvée.');
+    window.location.href = 'dashboard.php'; // Redirection vers la page principale
+  </script>";
 }
 
 // Récupérer toutes les destinations

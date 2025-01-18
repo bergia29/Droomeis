@@ -1,4 +1,4 @@
-/* Style global */
+/* Style général */
 body {
     background: #dee6e2;
     font-family: 'Montserrat', sans-serif;
@@ -12,49 +12,53 @@ body {
 
 /* En-tête */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0px;
-    background-color:#6bbfcb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #6bbfcb;
+  width: 97%;                /* Prendre toute la largeur */
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo-image {
-    width: 120px; /* Réduire la taille du logo */
-    height: auto;
+  width: 120px; /* Réduire la taille du logo */
+  height: auto;
 }
 
 .nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .nav a.active {
-    text-decoration: underline;
-    font-weight: bold;
-  }
-  
-  .nav a:hover {
-    text-decoration: underline;
-  }
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+}
 
-.auth-buttons .button {
-    background-color:#407bcd;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 10px;
+.nav a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Bouton authentification */
+.auth-buttons .auth-button {
+  margin-left: 10px;
+  background-color: #407bcd;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.auth-buttons .auth-button:hover {
+  background-color: #003d82;
+  transform: scale(1.05);
 }
 
 /* Formulaire de contact */
@@ -186,7 +190,7 @@ form div > a {
     align-items: center; 
     flex-wrap: wrap; 
     bottom: 0; 
-    width: 100%;
+    width: 98%;
     z-index: 10;
   }
   

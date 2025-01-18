@@ -14,15 +14,11 @@
             <img src="Logo.png" alt="Logo Droomreis" class="logo-image">
         </div>
         <nav class="nav">
-    <a href="accueil.php" >Accueil</a>
-    <a href="destination.php"class="active">Destinations</a>
-    <a href="messagerie.php">Messagerie</a>
-    <a href="contact.php">Contact</a>
-    <a href="propos.php">A propos de nous</a>
+    
         </nav>
         <div class="auth-buttons">
-            <a href="Formulaire_inscription.php"class='auth-button'>S'inscrire</a>
-        <a href="Formulaire_connexion.php"class='auth-button'>Se connecter</a>
+            <a href="inscription_admin.php"class='auth-button'>S'inscrire</a>
+        <a href="connexion_admin.php"class='auth-button'>Se connecter</a>
         </div>
     </header>
 

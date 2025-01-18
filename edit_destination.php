@@ -36,14 +36,19 @@ if (isset($_GET['id'])) {
             ':id' => $id
         ]);
 
-        echo "Destination modifiée avec succès.";
+        // Message de confirmation et redirection
+        echo "<script type='text/javascript'>
+        alert('La destination a été modifiée avec succès.');
+        window.location.href = 'dashboard.php'; // Redirection vers index.php après modification
+        </script>";
+        exit(); // Stoppe l'exécution du script PHP
     }
-} else {
-    // Si aucune destination n'est sélectionnée pour modification, afficher toutes les destinations
-    $stmt = $conn->prepare("SELECT * FROM destination");
-    $stmt->execute();
-    $destinations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+// Si aucune destination n'est sélectionnée pour modification, afficher toutes les destinations
+$stmt = $conn->prepare("SELECT * FROM destination");
+$stmt->execute();
+$destinations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!-- Affichage de la liste des destinations -->
@@ -67,7 +72,9 @@ if (isset($_GET['id'])) {
                     <td><?= htmlspecialchars($destination['localisation']) ?></td>
                     <td>
                         <!-- Lien pour modifier cette destination -->
-                        <a href="edit_destination.php?id=<?= $destination['idDestination'] ?>">Modifier</a>
+                        <a href="edit_destination.php?id=<?= $destination['idDestination'] ?>">
+                            Modifier
+                        </a>
                     </td>
                 </tr>
             <?php endforeach; ?>

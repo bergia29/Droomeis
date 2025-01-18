@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($stmt->affected_rows > 0) {
         echo "Administrateur inscrit avec succès !";
         // Vous pouvez rediriger vers une page de connexion ou un tableau de bord administrateur
-        header("Location: index.php");
+        header("Location: dashboard.php");
     } else {
         echo "Une erreur est survenue. Veuillez réessayer.";
     }

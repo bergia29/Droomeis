@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['email'] = $user['emailU']; // Email de l'utilisateur
 
             // Rediriger vers la page du tableau de bord
-            header('Location: accueil.php');
+            header('Location: accueil_deco.php');
             exit();
         } else {
             echo "Mot de passe incorrect.<br>";

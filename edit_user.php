@@ -47,43 +47,85 @@ if (isset($_GET['id'])) {
             ':id' => $userId
         ]);
 
-        echo "Utilisateur modifié avec succès.";
+        echo "<script type='text/javascript'>
+                alert('Utilisateur modifié avec succès.');
+                window.location.href = 'dashboard.php'; // Redirection vers la page principale
+            </script>";
+
     }
 } else {
-    echo "Utilisateur non trouvé.";
+    // Récupérer tous les utilisateurs
+    $stmt = $conn->prepare("SELECT * FROM utilisateur");
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
 ?>
 
 <main>
-    <h2>Modifier l'utilisateur</h2>
+    <h2>Liste des Utilisateurs</h2>
 
-    <!-- Formulaire de modification d'utilisateur -->
-    <form action="edit_user.php?id=<?= $user['idUtilisateur'] ?>" method="POST">
-        <label>Email :</label>
-        <input type="email" name="email" value="<?= $user['emailU'] ?>" required>
+    <!-- Affichage de la liste des utilisateurs -->
+    <?php if (isset($users) && count($users) > 0): ?>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Rôle</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($users as $user): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($user['emailU']) ?></td>
+                        <td><?= htmlspecialchars($user['nomU']) ?></td>
+                        <td><?= htmlspecialchars($user['prénomU']) ?></td>
+                        <td><?= htmlspecialchars($user['role']) ?></td>
+                        <td>
+                            <!-- Lien pour modifier cet utilisateur -->
+                            <a href="edit_user.php?id=<?= $user['idUtilisateur'] ?>">Modifier</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>Aucun utilisateur trouvé.</p>
+    <?php endif; ?>
 
-        <!-- Mot de passe (laisser vide pour ne pas modifier) -->
-        <label>Mot de passe (laisser vide pour ne pas modifier) :</label>
-        <input type="password" name="password">
+    <!-- Formulaire de modification d'un utilisateur -->
+    <?php if (isset($user)): ?>
+        <h2>Modifier l'Utilisateur</h2>
+        <form action="edit_user.php?id=<?= $user['idUtilisateur'] ?>" method="POST">
+            <label>Email :</label>
+            <input type="email" name="email" value="<?= htmlspecialchars($user['emailU']) ?>" required>
 
-        <label>Nom :</label>
-        <input type="text" name="nom" value="<?= $user['nomU'] ?>" required>
+            <!-- Mot de passe (laisser vide pour ne pas modifier) -->
+            <label>Mot de passe (laisser vide pour ne pas modifier) :</label>
+            <input type="password" name="password">
 
-        <label>Prénom :</label>
-        <input type="text" name="prenom" value="<?= $user['prénomU'] ?>" required>
+            <label>Nom :</label>
+            <input type="text" name="nom" value="<?= htmlspecialchars($user['nomU']) ?>" required>
 
-        <label>Date de naissance :</label>
-        <input type="date" name="dateNaissance" value="<?= $user['dateNaissanceU'] ?>" required>
+            <label>Prénom :</label>
+            <input type="text" name="prenom" value="<?= htmlspecialchars($user['prénomU']) ?>" required>
 
-        <label>Adresse :</label>
-        <input type="text" name="adressePostale" value="<?= $user['adressePostalU'] ?>" required>
+            <label>Date de naissance :</label>
+            <input type="date" name="dateNaissance" value="<?= htmlspecialchars($user['dateNaissanceU']) ?>" required>
 
-        <label>Rôle :</label>
-        <select name="role" required>
-            <option value="guide" <?= ($user['role'] == 'guide') ? 'selected' : '' ?>>Guide</option>
-            <option value="voyageur" <?= ($user['role'] == 'voyageur') ? 'selected' : '' ?>>Voyageur</option>
-        </select>
+            <label>Adresse :</label>
+            <input type="text" name="adressePostale" value="<?= htmlspecialchars($user['adressePostalU']) ?>" required>
 
-        <button type="submit">Modifier</button>
-    </form>
+            <label>Rôle :</label>
+            <select name="role" required>
+                <option value="guide" <?= ($user['role'] == 'guide') ? 'selected' : '' ?>>Guide</option>
+                <option value="voyageur" <?= ($user['role'] == 'voyageur') ? 'selected' : '' ?>>Voyageur</option>
+            </select>
+
+            <button type="submit">Modifier</button>
+        </form>
+    <?php endif; ?>
 </main>

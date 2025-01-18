@@ -15,14 +15,15 @@
             <img src="Logo.png" alt="Logo Droomreis" class="logo-image">
         </div>
         <nav class="nav">
-            <a href="#">Accueil</a>
-            <a href="#">Destinations</a>
-            <a href="#">Messagerie</a>
-            <a href="#">Contact</a>
+            <a href="accueil.php" >Accueil</a>
+            <a href="destination.php"class="active">Destinations</a>
+            <a href="messagerie.php">Messagerie</a>
+            <a href="contact.php">Contact</a>
+            <a href="propos.php">A propos de nous</a>
         </nav>
         <div class="auth-buttons">
-            <a href="Formulaire_inscription.html" class="button"> S'inscrire </a>
-            <a href="Formulaire_connexion.html" class="button"> Se connecter </a>
+            <a href="Formulaire_inscription.php"class='auth-button'>S'inscrire</a>
+            <a href="Formulaire_connexion.php"class='auth-button'>Se connecter</a>
         </div>
     </header>
 
@@ -34,31 +35,31 @@
         <form action="traitement_inscription.php" method="post">
             <div>
                 <label for="prénomU">Prénom</label>
-                <input type="text" id="prénom" name="prénomU" placeholder="Charnelle" required autofocus>
+                <input type="text" id="prénom" name="prénom" placeholder="Charnelle" required>
             </div>
             <div>
                 <label for="nomU">Nom</label>
-                <input type="text" id="nom" name="nomU" placeholder="LAROSEE" required>
+                <input type="text" id="nom" name="nom" placeholder="LAROSEE" required>
             </div>
             <div>
                 <label for="emailU">E-mail</label>
-                <input type="email" id="email" name="emailU" placeholder="monadresse@gmail.com" required>
+                <input type="email" id="email" name="email" placeholder="monadresse@gmail.com" required>
             </div>
             <div>
                 <label for="dateNaissanceU">Date de Naissance</label>
-                <input type="date" id="dateNaissance" name="dateNaissanceU" required>
+                <input type="date" id="dateNaissance" name="dateNaissance" required>
             </div>
             <div>
                 <label for="adressePostalU">Adresse postale</label>
-                <input type="text" id="adressePostale" name="adressePostalU" placeholder="Paris" required>
+                <input type="text" id="adressePostale" name="adressePostale" placeholder="Paris" required>
             </div>
             <div>
                 <label for="passwordU">Mot de passe</label>
-                <input type="password" id="password" name="passwordU" placeholder="Votre mot de passe" required>
+                <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
             </div>
             <div>
                 <label for="role">Êtes-vous :</label>
-                <select id="role" name="roleU" required aria-label="Sélectionnez votre rôle, guide ou voyageur">
+                <select id="role" name="role" required aria-label="Sélectionnez votre rôle, guide ou voyageur">
                     <option value="" disabled selected>Choisissez une option</option>
                     <option value="guide">Guide</option>
                     <option value="voyageur">Voyageur</option>
@@ -68,14 +69,20 @@
                 <button type="submit">M'inscrire</button>
             </div>
             <div>
-                <a href="Formulaire_connexion.html">Vous avez un compte ? Connectez-vous </a>
+                <a href="Formulaire_connexion.php">Vous avez un compte ? Connectez-vous </a>
             </div>
         </form>
     </div>
 
-    <!-- <footer>
-        <p>&copy; 2024 Droomreis. Tous droits réservés.</p>
-    </footer>-->
+    <footer class="footer">
+        <a href="accueil.php"><img src="Logo.png" alt="Logo Droomreis" class="logo-image-footer"></a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Twitter</a>
+        <a href="#">TikTok</a>
+        <a href="#">Instagram</a>
+        <p class="copyright">Droomreis © 2024</p>
+    </footer>
+
 </body>
 
 </html>
