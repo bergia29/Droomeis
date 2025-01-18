@@ -8,18 +8,18 @@ body {
 
 /* Hero section */
 .hero-section {
-    background: url('mg.jpg') no-repeat center center;
-    background-size: cover;  /* Couvre l'ensemble de l'espace sans déformation */
-    height: 300px;  /* Hauteur de votre image */
+    background-size: cover; /* Cela va étirer l'image pour qu'elle couvre toute la section */
+    height: 300px;  /* Ajuste la hauteur de la section selon tes besoins */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-bottom: 2px solid black;
-    filter: contrast(90%);    
+    filter: contrast(90%);
     position: relative;
 }
+
 .hero-section h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3em;
@@ -178,5 +178,6 @@ footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    margin-top: 95px;
+    padding: 20px;
 }

@@ -1,0 +1,103 @@
+<?php
+// Inclure la connexion à la base de données
+include('connexion.php');
+
+// Récupérer toutes les destinations existantes dans la base de données
+$query = "SELECT idDestination, pays, ville FROM destinations";
+$result = $conn->query($query);
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="activité.css">
+    <title>Ajouter une Activité</title>
+</head>
+<body>
+    <h1>Ajouter une Activité</h1>
+    <form action="ajouter_activite.php" method="POST" enctype="multipart/form-data">
+
+        <!-- Menu déroulant pour sélectionner la destination -->
+        <label for="idDestination">Destination :</label>
+        <select id="idDestination" name="idDestination" required>
+            <option value="">Sélectionner une destination</option>
+            <?php
+            // Affichage des destinations existantes
+            while ($row = $result->fetch_assoc()) {
+                echo '<option value="' . $row['idDestination'] . '">' . $row['pays'] . ' - ' . $row['ville'] . '</option>';
+            }
+            ?>
+        </select><br><br>
+
+        <!-- Nom des activités -->
+        <label for="nom1">Nom de l'activité 1 :</label>
+        <input type="text" id="nom1" name="nom1" required><br><br>
+
+        <label for="nom2">Nom de l'activité 2 :</label>
+        <input type="text" id="nom2" name="nom2" required><br><br>
+
+        <label for="nom3">Nom de l'activité 3 :</label>
+        <input type="text" id="nom3" name="nom3" required><br><br>
+
+        <!-- Durée des activités -->
+        <label for="durée1">Durée 1 (HH:MM:SS) :</label>
+        <input type="time" id="durée1" name="durée1" required><br><br>
+
+        <label for="durée2">Durée 2 (HH:MM:SS) :</label>
+        <input type="time" id="durée2" name="durée2" required><br><br>
+
+        <label for="durée3">Durée 3 (HH:MM:SS) :</label>
+        <input type="time" id="durée3" name="durée3" required><br><br>
+
+        <!-- Prix et Guide pour chaque activité -->
+        <label for="prix1">Prix de l'activité 1 :</label>
+        <input type="number" id="prix1" name="prix1" step="0.01" required><br><br>
+
+        <label for="guide1">Guide 1 :</label>
+        <input type="text" id="guide1" name="guide1" required><br><br>
+
+        <label for="descriptionA1">Description 1 :</label>
+        <textarea id="descriptionA1" name="descriptionA1" required></textarea><br><br>
+
+        <label for="image1">Image 1 :</label>
+        <input type="file" id="image1" name="image1" accept="image/*"><br><br>
+
+        <label for="prix2">Prix de l'activité 2 :</label>
+        <input type="number" id="prix2" name="prix2" step="0.01" required><br><br>
+
+        <label for="guide2">Guide 2 :</label>
+        <input type="text" id="guide2" name="guide2" required><br><br>
+
+        <label for="descriptionA2">Description 2 :</label>
+        <textarea id="descriptionA2" name="descriptionA2" required></textarea><br><br>
+
+        <label for="image2">Image 2 :</label>
+        <input type="file" id="image2" name="image2" accept="image/*"><br><br>
+
+        <label for="prix3">Prix de l'activité 3 :</label>
+        <input type="number" id="prix3" name="prix3" step="0.01" required><br><br>
+
+        <label for="guide3">Guide 3 :</label>
+        <input type="text" id="guide3" name="guide3" required><br><br>
+
+        <label for="descriptionA3">Description 3 :</label>
+        <textarea id="descriptionA3" name="descriptionA3" required></textarea><br><br>
+
+        <label for="image3">Image 3 :</label>
+        <input type="file" id="image3" name="image3" accept="image/*"><br><br>
+
+        <!-- Image de back -->
+        <label for="image0">Image back :</label>
+        <input type="file" id="image0" name="image0" accept="image/*" required><br><br>
+
+        <button type="submit">Ajouter l'Activité</button>
+    </form>
+</body>
+</html>
+
+<?php
+// Fermer la connexion à la base de données
+$conn->close();
+?>

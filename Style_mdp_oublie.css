@@ -1,0 +1,176 @@
+/* Style général */
+body {
+    background: #dee6e2;
+    font-family: 'Montserrat', sans-serif;
+    color: #303030;
+    margin: 0;
+    padding: 0;
+    justify-content: center;    /* Centrer horizontalement */
+    align-items: center;        /* Centrer verticalement */
+    height: 100vh;              /* Prendre toute la hauteur de la fenêtre */
+}
+
+/* En-tête */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #6bbfcb;
+  width: 100%;                /* Prendre toute la largeur */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 120px; /* Réduire la taille du logo */
+  height: auto;
+}
+
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Bouton authentification */
+.auth-buttons .auth-button {
+  margin-left: 10px;
+  background-color: #407bcd;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.auth-buttons .auth-button:hover {
+  background-color: #003d82;
+  transform: scale(1.05);
+}
+
+ 
+/* Conteneur principal */
+.password-reset-container {
+    width: 400px;              /* Largeur du conteneur */
+    background-color: white;
+    padding: 30px;             /* Espacement interne */
+    border-radius: 8px;        /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+    text-align: center;        /* Centrer le texte */
+    margin: 0 auto;  
+   
+    
+}
+
+.password-reset-container h2 {
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #303030;
+}
+
+.password-reset-container p {
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #606060;
+}
+
+/* Style du formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-align: left;
+}
+
+form input {
+    height: 40px;
+    background: #dee6e2;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+form button {
+    height: 45px;
+    font-weight: 700;
+    font-size: 16px;
+    background: #6bbfcb;
+    border: 1px solid rgba(48, 48, 48, 0.5);
+    border-radius: 5px;
+    color: #303030;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Lien de retour */
+.password-reset-container a {
+    display: block;
+    margin-top: 10px;
+    color: #0056b3;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.password-reset-container a:hover {
+    text-decoration: underline;
+}
+
+
+/* Pied de page */
+.footer {
+  background-color: #6bbfcb;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  bottom: 0; 
+  width: 100%;
+  z-index: 10;
+}
+
+.footer a {
+  margin: 0 15px; 
+  text-decoration: none;
+  color: #0056b3;
+  font-size: 14px;
+}
+
+/* Logo */
+.logo-image-footer {
+  margin-right: 15px; 
+  width: 150px;
+  height: auto;
+}
+
+.footer .copyright {
+  color: #000000;
+  font-size: 12px;
+  margin-top: 10px; 
+}
+

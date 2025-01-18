@@ -71,7 +71,8 @@ body {
 
 
 .mald {
-  margin-top: -40px;
+  margin-top: 280px;
+  position: absolute;
 }
 
 .nav a {
@@ -260,7 +261,7 @@ button[data-parametre="tout"] {
   max-width: none;           /* Désactivez la largeur maximale pour que la bulle puisse s'étirer */
   height: auto;              /* Laissez la hauteur s'adapter au contenu */
   margin-left: 215px;
-  margin-top: -100px; 
+  margin-top: -50px; 
 }
 
 .price-bubble1 { /*ATTENTION C LES FAVORIS*/

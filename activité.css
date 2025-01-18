@@ -1,0 +1,134 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f7fc;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 30px;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 30px;
+}
+
+/* Form Container */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Labels and Inputs */
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+input[type="text"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="file"] {
+    padding: 10px 0;
+}
+
+/* Textarea styling */
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+/* Activity Block */
+.activity-block {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.activity-block h3 {
+    font-size: 18px;
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Separator */
+hr {
+    border: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+/* Section for Background Image */
+.back-image-block {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.back-image-block h3 {
+    font-size: 18px;
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+/* Select Menu */
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    button[type="submit"] {
+        padding: 12px 25px;
+    }
+}
