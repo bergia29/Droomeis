@@ -70,13 +70,18 @@
         <label for="cObjet">Objet</label>
         <select id="objet" name="objetC" required aria-label="Sélectionnez votre motif">
           <option value="" disabled selected>Choisissez un motif</option>
-          <option value="question">Question</option>
+          <option value="Info_general">Demande d'information</option>
+          <option value="Probleme_resa">Problème avec une réservation</option>
+          <option value="feedback">Feedback</option>
           <option value="autre">Autre</option>
         </select>
       </div>
       <div>
         <label for="cContenu">Contenu</label>
         <textarea id="contenuC" name="contenuC" placeholder="Écrivez votre message ici" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn-submit">Valider</button>
       </div>
     </form>
   </div>
@@ -96,7 +101,7 @@
           <th>Politiques</th>
         </tr>
         <tr>
-          <td><a href="#">FAQ</a></td>
+          <td><a href="faq.php">FAQ</a></td>
           <td><a href="#">Instagram</a></td>
           <td><a href="#">Mentions légales</a></td>
         </tr>
@@ -109,5 +114,6 @@
       <p class="copyright">Droomreis © 2025</p>
     </div>
   </footer>
+
 </body>
 </html>
