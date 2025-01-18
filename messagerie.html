@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie</title>
+    <link rel="stylesheet" href="messagerie.css">
+
+</head>
+  <!-- En-tête avec navigation -->
+  <header class="header">
+    <div class="logo">
+      <a href="accueil.html"><img src="Logo.png" alt="Logo Droomreis" class="logo-image"></a>
+    </div>
+    <nav class="nav">
+      <a href="accueil.html" class="active">Accueil</a>
+      <a href="destination.html">Destinations</a>
+      <a href="messagerie.html">Messagerie</a>
+      <a href="contact.html">Contact</a>
+      <a href="propos.html">A propos de nous</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="Formulaire_inscription.html"class='auth-button'>S'inscrire</a>
+      <a href="Formulaire_connexion.html"class='auth-button'>Se connecter</a>
+    </div>
+  </header>
+
+    <!-- Section de recherche -->
+    <section class="search-section">
+        <form class="search-form">
+          <input type="text" placeholder="Destination" aria-label="Recherche de destination">
+          <input type="date" aria-label="Choisir une date">
+          <select aria-label="Choisir une destination">
+            <option value="1">Paris</option>
+            <option value="2">Milan</option>
+            <option value="3">Etretat</option>
+            <option value="4">Lyon</option>
+            <option value="5">5+</option>
+          </select>
+          <button type="submit">Rechercher</button>
+        </form>
+      </section>
+
+<body>
+    <div class="message">
+       <h1 class="title">Messagerie</h1>
+       <hr class="divider">
+       <div class="button-container">
+       <button class="button">Nouvelle conversation</button>
+        <button class="button">Retour à l'accueil</button>
+       </div>
+       <hr class="divider">
+       <div class="search-container">
+           <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Nom,prénom" oninput="filterContacts()">
+       </div>
+    
+       <h3 class="sub-title">Liste des conversations</h3>
+
+       <div class="contact-list" id="contactList">
+           <div class="contact-item" onclick="openChat('Mr A')">
+               <img src="Mr_A.jpg" alt="Mr A" class="contact-photo">
+               <div class="contact-info">
+                   <h3 class="contact-name">Mr A</h3>
+                   <p class="contact-preview">Bonjour, je suis là</p>
+               </div> 
+           </div>
+           <div class="contact-item" onclick="openChat('Mr B')">
+               <img src="Mr_B.jpg" alt="Mr B" class="contact-photo">
+               <div class="contact-info">
+                   <h3 class="contact-name">Mr B</h3>
+                   <p class="contact-previw">hello, i'm here</p>
+               </div> 
+           </div>
+           <div class="contact-item" onclick="openChat('Mr C')">
+               <img src="Mr_C.jpg" alt="Mr C" class="contact-photo">
+               <div class="contact-info">
+                   <h3 class="contact-name">Mr C</h3>
+                   <p class="contact-previw">hello, i'm here too</p>
+               </div> 
+           </div>
+   
+        </div>
+    </div>
+
+  <footer class="footer">
+    <a href="accueil.html"><img src="Logo.png" alt="Logo Droomreis" class="logo-image-footer"></a>
+    <a href="#">Mentions légales</a>
+    <a href="#">Twitter</a>
+    <a href="#">TikTok</a>
+    <a href="#">Instagram</a>
+    <p class="copyright">Droomreis © 2024</p>
+  </footer>
+    
+  <script src="messagerie.js"></script>
+
+</body>
+</html>
