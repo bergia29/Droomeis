@@ -1,0 +1,203 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Hero section */
+.hero-section {
+    background-size: cover; /* Cela va étirer l'image pour qu'elle couvre toute la section */
+    height: 300px;  /* Ajuste la hauteur de la section selon tes besoins */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid black;
+    filter: contrast(90%);
+    position: relative;
+    color: white;
+}
+
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+
+.hero-section p {
+    font-size: 1.2em;
+    margin: 0 0 30px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 5);
+
+}
+
+.hero-section p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Fond sombre avec opacité */
+    z-index: -1;
+}
+
+
+
+.cta-button {
+    background: #f39c12;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 30px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #e67e22;
+}
+
+/* Activities section */
+.activities-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.activities-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Grid container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-info {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #f39c12;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.details-button {
+    display: inline-block;
+    background: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.details-button:hover {
+    background: #2980b9;
+}
+
+.logoretour {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 1000; /* Assurez-vous que le logo est au-dessus du contenu */
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 50px; /* Ajustez la taille du logo */
+    height: 50px;
+    border-radius: 50%; /* Rend le logo rond */
+    object-fit: cover; /* S'assure que l'image est bien centrée dans son conteneur */
+}
+
+/* Bulle de description qui couvre toute l'image */
+.description-bubble {
+    position: absolute;
+    top: 0;               /* Positionnée tout en haut */
+    left: 0;              /* Positionnée tout à gauche */
+    width: 100%;          /* Couvre toute la largeur de la carte */
+    height: 46%;         /* Couvre toute la hauteur de la carte */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box; /* S'assure que le padding ne dépasse pas les dimensions */
+    font-size: 1em;
+    opacity: 0;           /* Initialement invisible */
+    visibility: hidden;   /* Initialement cachée */
+    transition: opacity 0.3s, visibility 0.3s; /* Transition pour apparaître/dissoudre */
+    display: flex;        /* Utiliser flex pour centrer le texte */
+    justify-content: center; /* Centrer le texte horizontalement */
+    align-items: center;     /* Centrer le texte verticalement */
+    z-index: 1;           /* S'assurer que la bulle est au-dessus de l'image */
+}
+
+/* Afficher la bulle de description au survol de la carte */
+.card:hover .description-bubble {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ajouter une position relative pour que la bulle se positionne correctement */
+.card {
+    position: relative;
+}
+
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    margin-top: 95px;
+    padding: 20px;
+}
