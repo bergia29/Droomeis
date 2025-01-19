@@ -46,13 +46,13 @@
   </section>
 
 
-  <!-- Formulaire de connexion -->
+  <!-- A propos de nous -->
   <div class="Connexion">
         <h1>Droomreis</h1>
         <form method="post">
-            <p>Droomreis est une plateforme permettant de réserver des guides locaux.</p>
-            <p>Droomreis est une site concue pour un gain de temps pour nos voyageurs.</p>
-            <p>Ce site est conçu par la société 2CDHGroup</p>
+          <p>Droomreis est une plateforme innovante, conçue pour simplifier et enrichir l'expérience des voyageurs en leur permettant de réserver des activités uniques accompagnées de guides locaux. </p>
+          <p>Droomreis qui signifie "Voyage de rêve" en néerlandais à pour but de vous faire révée à travers notre service </p>
+          <p>Le concept, développé par la société 2CDHGroup, met en avant une approche personnalisée et pratique, combinant la découverte culturelle et l'accompagnement expert.</p>
         </form>
     </div>
 
@@ -69,7 +69,7 @@
           <th>Politiques</th>
         </tr>
         <tr>
-          <td><a href="#">FAQ</a></td>
+          <td><a href="faq.php">FAQ</a></td>
           <td><a href="#">Instagram</a></td>
           <td><a href="#">Mentions légales</a></td>
         </tr>
