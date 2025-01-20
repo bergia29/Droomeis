@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Droomreis - Accueil</title>
+  <title>Accueil - Droomreis</title>
   
-  <!--Fichier css pour le menu, la barre de recherche et le pied de-->
+  <!--Fichier css pour le menu, la barre de recherche et le pied de page-->
   <link rel="stylesheet" href="General.css"> 
-  
+  <!--Fichier css pour la page d'accueil-->
   <link rel="stylesheet" href="Style_accueil.css">
-  <script src="Script_accueil.js" defer></script>
 
+
+  
   <!--Logo dans l'onglet-->
   <link rel="icon" href="Flaticon1.png" type="image/png" sizes="48x48">
 
@@ -35,19 +36,23 @@
     </div>
   </header>
 
-
-  <div class="main-content">
-    <section class="search-section">
+  <section class="search-section">
       <form class="search-form" action="recherche.php" method="GET">
-        <input type="text" placeholder="Pays" name="destination" aria-label="Recherche de destination">
+        <input type="text" placeholder="Pays" name="query" aria-label="Recherche de destination"id="search-input"autocomplete="off">
+
+        <!-- Pour le suggestions dans la barre de recherche-->
+        <div id="suggestions" style="display:none;"></div>
+
         <input type="date" name="date" aria-label="Choisir une date">
         <select name="ville" aria-label="Choisir une destination">
           <?php include 'get_villes.php'; ?>
         </select>
         <button type="submit">Rechercher</button>
       </form>
-    </section>
+  </section>
 
+
+  <div class="main-content">
     <!-- Section avec images de destinations -->
     <section class="destinations-section">
       <!-- Galerie d'images -->
@@ -128,16 +133,9 @@
     </div>
   </footer>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="Menu_Recherche.js"></script>
 
-  <!--
-  <a href="accueil.php">
-      <img src="Logo.png" alt="Logo Droomreis" class="logo-image-footer">
-    </a>
-    <a href="#">Mentions légales</a>
-    <a href="#">Twitter</a>
-    <a href="#">TikTok</a>
-    <a href="#">Instagram</a>
-    <p class="copyright">Droomreis © 2024</p>
--->
+
 </body>
 </html>
