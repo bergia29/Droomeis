@@ -1,0 +1,118 @@
+<!-- Image au-dessus du footer -->
+  <img class="footer-illustration" src="tour_monde.jpg" alt="Illustration de monuments">
+  <!-- Pied de page -->
+  <footer>
+    <div class="footer-content">
+      <div class="img_footer">
+        <a href="accueil.php"><img src="Logo.png" alt="Logo Droomreis" class="logo-size"></a>
+      </div>
+      <table class="table_footer">
+        <tr>
+          <th>Assistance et FAQ</th>
+          <th>Réseaux sociaux</th>
+          <th>Politiques</th>
+        </tr>
+        <tr>
+          <td><a href="faq.php">FAQ</a></td>
+          <td><a href="#">Instagram</a></td>
+          <td><a href="#">Mentions légales</a></td>
+        </tr>
+        <tr>
+          <td><a href="contact.php">Nous Contacter</a></td>
+          <td></td>
+          <td><a href="#">Cookies</a></td>
+        </tr>
+      </table>
+      <p class="copyright">Droomreis © 2025</p>
+    </div>
+  </footer>
+
+  Le CSS 
+
+  .footer-illustration {
+    max-height: 200px; /* Limite la hauteur maximale */
+    object-fit: contain; /* Maintient les proportions sans déformer */
+    margin-bottom: -10px; /* Ajuste l'écart éventuel avec le footer */
+  }
+  .footer-illustration {
+    width: 100%; /* L'image occupe toute la largeur de l'écran */
+    height: auto; /* Garde les proportions */
+  }
+    
+
+/* Pied de page */
+footer {
+    background: linear-gradient(to bottom, white, #6bbfcb); /* Dégradé du blanc vers le bleu */
+    text-align: center;
+    padding: 0;  /* Enlève le padding supplémentaire pour mieux contrôler la hauteur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Aligne les éléments en colonne pour un meilleur contrôle */
+    flex-wrap: wrap;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    margin-top: auto; /* Assure que le footer reste en bas */
+    height: 300px; /* Hauteur fixe de 200px */
+    box-sizing: border-box; /* S'assure que les bordures et padding ne sortent pas de la hauteur définie */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* Centre le contenu verticalement */
+    max-width: 1200px;
+    width: 100%;  /* Utilise toute la largeur possible */
+    height: 100%;  /* Assure que le contenu utilise toute la hauteur du footer */
+    box-sizing: border-box; /* Inclut les padding dans la hauteur totale */
+}
+
+.img_footer {
+    margin-bottom: 10px; /* Ajuste la marge pour une meilleure présentation */
+}
+
+.img_footer img {
+    width: 150px;
+    height: auto;
+}
+
+.table_footer {
+    width: 100%;
+    margin: 0; /* Enlève la marge pour éviter d'ajouter de l'espace supplémentaire */
+    text-align: left;
+    border-collapse: collapse;
+    
+}
+
+.table_footer th {
+    font-size: 14px; /* Ajuste la taille de la police pour tenir dans la hauteur */
+    color: black;
+    text-align: center;
+    padding-bottom: 5px; /* Ajuste le padding pour que les éléments tiennent bien dans la hauteur */
+}
+
+.table_footer td {
+    font-size: 12px; /* Réduit la taille de la police pour plus d'espace */
+    color: #000;
+    text-align: center;
+    padding: 3px; /* Ajuste le padding pour que le contenu tienne mieux dans la hauteur */
+}
+
+.table_footer a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.table_footer a:hover {
+    color: #003d82;
+}
+
+.copyright {
+    color: black;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center;
+}
